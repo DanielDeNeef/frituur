@@ -38,7 +38,6 @@ public class Order {
                 ((Fries) x).Fry();
             }
         }
-
     }
 
     public void getOrderItems(){
@@ -51,54 +50,58 @@ public class Order {
         System.out.println("-----------------------------------");
         System.out.println("********************INFO********************");
         System.out.println("totaal bestellingen: "+orderCount);
-        System.out.println("er zijn tot nu toe "+Fries.getPortioncount()+" vershillende pakjet frietjes verkocht");
+        System.out.println("er zijn tot nu toe "+Fries.getPortioncount()+" vershillende pakjes friet verkocht");
         System.out.println("********************************************");
     }
 
-    public void groupOrders(){
-        int numberFries=0,numberSoda=0,numberwater=0,numberBeer=0, numberSauce = 0;
+    public void groupOrders() {
+        int numberFries = 0, numberSoda = 0, numberwater = 0, numberBeer = 0, numberSauce = 0;
 
-        for (int x=0;x<orederables.length;x++){
-            if (orederables[x] instanceof Fries){
+        for (int x = 0; x < orederables.length; x++) {
+            if (orederables[x] instanceof Fries) {
                 numberFries++;
             }
-            if (orederables[x] instanceof Soda){
-                sodas=Arrays.copyOf(sodas,sodas.length+1);
-                sodas[sodas.length-1]=(Soda) orederables[x];
+            if (orederables[x] instanceof Soda) {
+                sodas = Arrays.copyOf(sodas, sodas.length + 1);
+                sodas[sodas.length - 1] = (Soda) orederables[x];
                 numberSoda++;
             }
-            if (orederables[x] instanceof Water){
-                waters=Arrays.copyOf(waters,waters.length+1);
-                waters[waters.length-1]=(Water) orederables[x];
+            if (orederables[x] instanceof Water) {
+                waters = Arrays.copyOf(waters, waters.length + 1);
+                waters[waters.length - 1] = (Water) orederables[x];
                 numberwater++;
             }
-            if (orederables[x] instanceof Beer){
-                beers=Arrays.copyOf(beers,beers.length+1);
-                beers[beers.length-1]=(Beer) orederables[x];
+            if (orederables[x] instanceof Beer) {
+                beers = Arrays.copyOf(beers, beers.length + 1);
+                beers[beers.length - 1] = (Beer) orederables[x];
                 numberBeer++;
             }
-            if (orederables[x] instanceof Sauce){
-                sauces=Arrays.copyOf(sauces,sauces.length+1);
-                sauces[sauces.length-1]=(Sauce) orederables[x];
+            if (orederables[x] instanceof Sauce) {
+                sauces = Arrays.copyOf(sauces, sauces.length + 1);
+                sauces[sauces.length - 1] = (Sauce) orederables[x];
                 numberSauce++;
             }
         }
-        if (numberBeer>0){
+        printGroupedordres(numberBeer,numberSoda,numberwater,numberFries,numberSauce);
+    }
 
-            if (numberBeer>1) {
-                System.out.println("\n" + numberBeer + " pintjes :");
+    public void printGroupedordres(int beer,int soda, int water, int fries, int sauce){
+        if (beer>0){
+
+            if (beer>1) {
+                System.out.println("\n" + beer + " pintjes :");
             }else {
-                System.out.println("\n" + numberBeer + " pintje :");
+                System.out.println("\n" + beer + " pintje :");
             }
             for (Beer x : beers){
                 System.out.println("-"+x);
             }
         }
-        if (numberFries>0){
-            if (numberFries>1) {
-                System.out.println("\n" + numberFries + " pakjes friet :");
+        if (fries>0){
+            if (fries>1) {
+                System.out.println("\n" + fries + " pakjes friet :");
             }else {
-                System.out.println("\n" + numberFries + " pakje friet :");
+                System.out.println("\n" + fries + " pakje friet :");
             }
             for (Orederable x : orederables){
                 if (x instanceof Fries){
@@ -106,31 +109,31 @@ public class Order {
                 }
             }
         }
-        if (numberSoda>0){
-            if (numberSoda>1) {
-                System.out.println("\n" + numberSoda + " sodas :");
+        if (soda>0){
+            if (soda>1) {
+                System.out.println("\n" + soda + " sodas :");
             }else {
-                System.out.println("\n" + numberSoda + " soda :");
+                System.out.println("\n" + soda + " soda :");
             }
             for (Soda x : sodas){
                 System.out.println("- "+x);
             }
         }
-        if (numberwater>0){
-            if (numberwater>1) {
-                System.out.println("\n" + numberwater + " waters :");
+        if (water>0){
+            if (water>1) {
+                System.out.println("\n" + water + " waters :");
             }else {
-                System.out.println("\n"+numberwater+" water :");
+                System.out.println("\n"+water+" water :");
             }
             for (Water x : waters){
                 System.out.println("- "+x);
             }
         }
-        if (numberSauce>0){
-            if (numberSauce>1) {
-                System.out.println("\n" + numberSauce + " Sauzen :");
+        if (sauce>0){
+            if (sauce>1) {
+                System.out.println("\n" + sauce + " Sauzen :");
             }else {
-                System.out.println("\n" + numberSauce + " Saus :");
+                System.out.println("\n" + sauce + " Saus :");
             }
             for (Sauce x : sauces){
                 System.out.println("- "+x);
