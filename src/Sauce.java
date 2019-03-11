@@ -25,6 +25,6 @@ public class Sauce implements Orederable {
 
     @Override
     public String toString() {
-        return "Sauce "+name;
+        return name+"("+getPrice()+"€)";
     }
 }

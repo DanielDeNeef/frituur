@@ -41,6 +41,6 @@ public class Fries implements Fryable,Orederable{
 
     @Override
     public String toString() {
-        return size.name().toLowerCase()+" size of fries";
+        return size.name().toLowerCase()+"("+getPrice()+"€)";
     }
 }

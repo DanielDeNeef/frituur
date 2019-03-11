@@ -26,6 +26,6 @@ public class Soda extends Drink {
 
     @Override
     public String toString() {
-        return name;
+        return name+"("+getPrice()+"€)";
     }
 }
