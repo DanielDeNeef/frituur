@@ -105,7 +105,7 @@ public class Order {
             }
             for (Orederable x : orederables){
                 if (x instanceof Fries){
-                    System.out.println("- "+x);;
+                    System.out.println("- "+x);
                 }
             }
         }
